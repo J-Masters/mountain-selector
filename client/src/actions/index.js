@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { FETCH_MOUNTAINS } from './types';
 
 export const fetchMountains = () => async dispatch => {
-  const response = await axios.get('/');
+  const res = await axios.get('/mountains');
 
-  dispatch({ type: "FETCH_MOUNTAINS", payload: response.data});
+  dispatch({ type: FETCH_MOUNTAINS, payload: res.data});
 };

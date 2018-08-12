@@ -8,15 +8,27 @@ const mountainSchema = new Schema({
   vertical: Number,
   summitElevation: Number,
   lifts: Number,
+  ticketPrice: Number,
   terrainParks: Number,
   airportNearest: String,
   driveTime: Number,
-  snowboardsAllowed: Boolean,
+  snowboardsAllowed: String,
   country: String,
   stateOrProvince: String,
   beginnerPercent: Number,
   intermediatePercent: Number,
-  expertPercent: Number
+  expertPercent: Number,
+
+  nightLifeScore: Number,
+  snowScore: Number,
+  beginnerScore: Number,
+  intermediateScore: Number,
+  expertScore: Number,
+  travelEaseScore: Number,
+  familyFriendlyScore: Number,
+  priceScore: Number,
+  parksScore: Number,
+  crowdsScore: Number
 });
 
 mongoose.model('mountains', mountainSchema);
