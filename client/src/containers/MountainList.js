@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import MountainListItem from '../components/MountainListItem';
 import { fetchMountains } from '../actions';
 
 class MountainList extends Component {
@@ -7,24 +8,19 @@ class MountainList extends Component {
     this.props.fetchMountains();
   }
 
-  renderMountains() {
+  renderMountainsList() {
     return this.props.mountains.map(mountain => {
       return (
-        <div className="card hoverable" key={mountain._id}>
-          <div className="card-content">
-            <span className="card-title">{mountain.name}</span>
-            <p>{mountain.annualSnowfall}</p>
-          </div>
-        </div>
+        <MountainListItem mountain={mountain} />
       );
     });
   }
 
   render() {
-    return(
-      <div>
+    return (
+      <div className="mountains-list">
         <h5>MountainsList</h5>
-        {this.renderMountains()}
+        {this.renderMountainsList()}
       </div>
     );
   }
@@ -34,4 +30,7 @@ function mapStateToProps({ mountains }) {
   return { mountains };
 }
 
-export default connect(mapStateToProps, { fetchMountains })(MountainList);
+export default connect(
+  mapStateToProps,
+  { fetchMountains }
+)(MountainList);
