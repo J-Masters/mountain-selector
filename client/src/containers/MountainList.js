@@ -11,7 +11,7 @@ class MountainList extends Component {
   renderMountainsList() {
     return this.props.mountains.map(mountain => {
       return (
-        <MountainListItem mountain={mountain} />
+        <MountainListItem mountain={mountain} key={mountain.name} />
       );
     });
   }
@@ -19,7 +19,6 @@ class MountainList extends Component {
   render() {
     return (
       <div className="mountains-list">
-        <h5>MountainsList</h5>
         {this.renderMountainsList()}
       </div>
     );

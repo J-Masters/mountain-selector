@@ -1,15 +1,11 @@
 /* main app */
 
-/*
 body {
-  background-image: url("../images/temp_background.jpg");
+  background-image: url('../images/temp_background.jpg');
   background-size: contain;
   background-repeat: no-repeat;
-}
-*/
-
-.mountains-list {
-  margin-top: 30%;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .container {
@@ -30,7 +26,19 @@ body {
   }
 }
 
-/* mountain list item */
+/* rankings form */
+
+.rankings-form {
+  width: 100%;
+  background-color: white;
+  padding: 10px 0px 10px 0px;
+}
+
+/* mountain list and list items */
+
+.mountains-list {
+  margin-top: 5%;
+}
 
 .info-block {
   border: 1px solid black;

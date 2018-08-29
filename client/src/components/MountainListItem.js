@@ -2,7 +2,7 @@ import React from 'react';
 
 const MountainListItem = ({ mountain }) => {
   return (
-    <div className="card hoverable" key={mountain._id}>
+    <div className="card hoverable" key={mountain.name}>
       <div className="card-content">
         <span className="card-title">{mountain.name}</span>
         <div className="row">
