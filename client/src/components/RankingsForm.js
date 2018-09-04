@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { setRankings } from '../actions';
 import formFields from './formFields';
 
 class RankingsForm extends Component {
@@ -7,7 +9,7 @@ class RankingsForm extends Component {
 
     this.state = {};
     formFields.forEach(field => {
-      this.state[field.name] = 5;
+      this.state[field.name] = "5";
     });
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -22,8 +24,7 @@ class RankingsForm extends Component {
     event.preventDefault();
     console.log(this.state);
 
-    //todo
-    //this.props. need to create new action here
+    this.props.setRankings(this.state);
   }
 
   renderRankingsSliders() {
@@ -64,4 +65,7 @@ class RankingsForm extends Component {
   }
 }
 
-export default RankingsForm;
+export default connect(
+  null,
+  { setRankings }
+)(RankingsForm);

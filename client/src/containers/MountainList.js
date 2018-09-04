@@ -25,6 +25,7 @@ class MountainList extends Component {
   }
 }
 
+// todo: need to get rankings in here too
 function mapStateToProps({ mountains }) {
   return { mountains };
 }
