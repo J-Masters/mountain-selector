@@ -40,8 +40,16 @@ body {
   margin-top: 5%;
 }
 
+.mountain-name {
+  font-family: Impact, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
 .info-block {
-  border: 1px solid black;
-  border-radius: 8px;
+  font-weight: bold;
+  background-color: #009688;
+  border-radius: 2px;
   padding: 5px;
+  margin: 5px;
+  height: 70px;
 }

@@ -1,45 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import infoBlockFields from './infoBlockFields';
 
-const MountainListItem = ({ mountain }) => {
-  return (
-    <div className="card hoverable" key={mountain.name}>
-      <div className="card-content">
-        <span className="card-title">{mountain.name}</span>
-        <div className="row">
-          <div className="col s2 center-align info-block">
-            Annual Snowfall
-            <br />
-            {mountain.annualSnowfall} in
+class MountainListItem extends Component {
+  renderInfoBlocks() {
+    return infoBlockFields.map(field => {
+      return (
+        <div className="col center-align valign-wrapper hoverable white-text info-block">
+          {field.label}
+          <br />
+          {this.props.mountain[field.name]}
+          {field.units}
+        </div>
+      );
+    });
+  }
+
+  render() {
+    const percentScore = Math.round(
+      (this.props.mountain.totalScore / this.props.maxScore) * 100
+    );
+    return (
+      <div className="card hoverable" key={this.props.mountain.name}>
+        <div className="card-content">
+          <div className="row">
+            <h5 className="col s3 left-align mountain-name">{this.props.mountain.name}</h5>
+            <div className="col s2 offset-s7 right-align mountain-name">
+              Total Score
+              <br />
+              {percentScore}
+            </div>
           </div>
-          <div className="col s2 center-align info-block">
-            Acreage
-            <br />
-            {mountain.acreage} acres
-          </div>
-          <div className="col s2 center-align info-block">
-            Vertical
-            <br />
-            {mountain.vertical} ft
-          </div>
-          <div className="col s2 center-align info-block">
-            Beginner Terrain
-            <br />
-            {mountain.beginnerPercent}%
-          </div>
-          <div className="col s2 center-align info-block">
-            Intermediate Terrain
-            <br />
-            {mountain.intermediatePercent}%
-          </div>
-          <div className="col s2 center-align info-block">
-            Expert Terrain
-            <br />
-            {mountain.expertPercent}%
-          </div>
+          <div className="row">{this.renderInfoBlocks()}</div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default MountainListItem;

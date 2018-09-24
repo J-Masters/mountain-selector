@@ -16,13 +16,16 @@ class RankingsForm extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.setRankings(this.state);
+  }
+
   onInputChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
   onFormSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
 
     this.props.setRankings(this.state);
   }
