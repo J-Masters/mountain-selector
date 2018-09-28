@@ -5,12 +5,6 @@ export default [
   { label: 'Summit Elevation', name: 'summitElevation', units: ' ft' },
   { label: 'Lifts', name: 'lifts', units: '' },
   { label: 'Terrain Parks', name: 'terrainParks', units: '' },
-  { label: 'Beginner Terrain', name: 'beginnerPercent', units: '%' },
-  { label: 'Intermediate Terrain', name: 'intermediatePercent', units: '%' },
-  { label: 'Expert Terrain', name: 'expertPercent', units: '%' },
-  { label: 'State/Province', name: 'stateOrProvince', units: '' },
-  { label: 'Country', name: 'country', units: '' },
   { label: 'Nearest Airport', name: 'airportNearest', units: '' },
-  { label: 'Drive Time', name: 'driveTime', units: 'minutes' },
-  { label: 'Snowboards Allowed', name: 'snowboardsAllowed', units: '' },
+  { label: 'Drive Time', name: 'driveTime', units: ' minutes' },
 ];

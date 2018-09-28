@@ -45,6 +45,10 @@ body {
   font-weight: bold;
 }
 
+.mountain-info{
+  height: 200px;
+}
+
 .info-block {
   font-weight: bold;
   background-color: #009688;
